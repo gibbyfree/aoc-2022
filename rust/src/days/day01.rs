@@ -2,9 +2,10 @@ use crate::{Solution, SolutionPair};
 
 ///////////////////////////////////////////////////////////////////////////////
 /// split into line groups, for each group, sum lines
+/// sort and pop to get the greatest vals
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gib/aoc/input/1.in");
+    let raw_input = include_str!("/home/gfree/aoc-2022/input/1.in");
     let mut output = raw_input.split("\n\n")
         .map(|s| s.lines().map(|i| i.parse::<usize>().unwrap()).sum::<usize>())
         .collect::<Vec<usize>>();
