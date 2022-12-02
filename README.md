@@ -3,7 +3,7 @@ using rust and nim for aoc this year. solutions will only use built-in libs. imp
 # Deck the halls with boughs of benchmark
 rust: vanilla `cargo run`
 
-nim: using `-d:danger and --gc:arc` for maximum perf 
+nim: using `-d:danger --gc:arc` for maximum perf 
 
 | Day   | Rust   | Nim   | 
 |---|---|---|
