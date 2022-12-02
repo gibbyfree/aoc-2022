@@ -1,5 +1,5 @@
 import os, times, strutils
-include src/day1
+include src/day1, src/day2
 
 template benchmark(name: string, code: untyped) =
     block:
@@ -23,6 +23,8 @@ proc callSolver(x: int, input: string): (int, int) =
     case x:
         of 1:
             solveDay1(input)
+        of 2: 
+            solveDay2(input)
         else:
             (0, 0)
 
