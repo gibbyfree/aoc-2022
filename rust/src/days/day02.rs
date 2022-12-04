@@ -6,7 +6,7 @@ use std::collections::HashMap;
 /// part 2: same, but transform my shape depending on desired outcome
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gfree/aoc-2022/input/2.in");
+    let raw_input = include_str!("/home/gib/aoc/input/2.in");
     let output: Vec<Vec<&str>> = raw_input
         .split("\n")
         .map(|r| r.split(" ").collect::<Vec<&str>>())

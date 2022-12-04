@@ -1,5 +1,5 @@
 import os, times, strutils
-include src/day1, src/day2
+include src/day1, src/day2, src/day3
 
 template benchmark(name: string, code: untyped) =
     block:
@@ -14,9 +14,9 @@ let
     day = args[0]
     nameStr = "Advent of Code 2022 Day " & day
 
-# might need to parameterize here a bit
+# might want to parameterize here a bit
 proc getInput(): string =
-    let fileName = "/home/gfree/aoc-2022/input/" & day & ".in"
+    let fileName = "/home/gib/aoc/input/" & day & ".in"
     readFile(fileName).strip()
 
 proc callSolver(x: int, input: string): (int, int) =
@@ -25,6 +25,8 @@ proc callSolver(x: int, input: string): (int, int) =
             solveDay1(input)
         of 2: 
             solveDay2(input)
+        of 3:
+            solveDay3(input)
         else:
             (0, 0)
 
