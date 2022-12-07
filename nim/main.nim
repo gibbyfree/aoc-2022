@@ -16,7 +16,7 @@ let
 
 # might want to parameterize here a bit
 proc getInput(): string =
-    let fileName = "/home/gib/aoc/input/" & day & ".in"
+    let fileName = "/home/gfree/aoc-2022/input/" & day & ".in"
     readFile(fileName).strip()
 
 proc callSolver(x: int, input: string): (int, int) =

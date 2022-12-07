@@ -13,7 +13,6 @@ pub fn solve() -> SolutionPair {
     let sol = find_index_of_unique_window(4, input) + 4;
     let sol2 = find_index_of_unique_window(14, input_copy) + 14;
 
-
     (Solution::I32(sol), Solution::I32(sol2))
 }
 
