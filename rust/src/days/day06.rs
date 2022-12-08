@@ -25,6 +25,7 @@ pub fn find_index_of_unique_window(size: usize, input: Vec<char>) -> i32 {
     0
 }
 
+// TODO move to util class
 pub fn has_unique_elements<T>(iter: T) -> bool 
     where
     T: IntoIterator,
