@@ -1,8 +1,11 @@
 use crate::{Solution, SolutionPair};
 
 ///////////////////////////////////////////////////////////////////////////////
-/// split into line groups, for each group, sum lines
-/// sort and pop to get the greatest vals
+/// this one took me the longest so far. it was a nightmare
+/// 2d vec was a mistake. using iter was a mistake. should've just used slices and indices
+/// part 2 instructions were super vague to me, and i struggled a lot to incorporate into my existing solution
+/// this is accomplished in a psychotic way, using the 'die' vars as semaphore-like things to keep my sums clean
+/// anyway i hated every second of it.
 
 pub fn solve() -> SolutionPair {
     // effectively a list of rows
@@ -39,8 +42,10 @@ pub fn solve() -> SolutionPair {
                     local_scenic += 1;
                     scenic_die += 1;
                 }
-                if tree_map[h][y] >= *col && die == 0 {
-                    die += 1;
+                if tree_map[h][y] >= *col {
+                    if die == 0 {
+                        die += 1;
+                    }
                     if scenic_die == 0 {
                         local_scenic += 1;
                         scenic_die += 1;
@@ -49,6 +54,7 @@ pub fn solve() -> SolutionPair {
             }
             scenic_score[0] = local_scenic;
             local_scenic = 0;
+            scenic_die = 1;
             // check below
             for i in (x + 1)..tree_map.len() {
                 if scenic_die == 2 && die == 2 {
@@ -61,8 +67,10 @@ pub fn solve() -> SolutionPair {
                     local_scenic += 1;
                     scenic_die += 1;
                 }
-                if tree_map[i][y] >= *col && die == 1 {
-                    die += 1;
+                if tree_map[i][y] >= *col {
+                    if die == 1 {
+                        die += 1;
+                    }
                     if scenic_die == 1 {
                         local_scenic += 1;
                         scenic_die += 1;
@@ -71,6 +79,7 @@ pub fn solve() -> SolutionPair {
             }
             scenic_score[1] = local_scenic;
             local_scenic = 0;
+            scenic_die = 2;
             // check left
             for j in (0 .. y).rev() {
                 if scenic_die == 3 && die == 3 {
@@ -83,8 +92,10 @@ pub fn solve() -> SolutionPair {
                     local_scenic += 1;
                     scenic_die += 1;
                 }
-                if tree_map[x][j] >= *col && die == 2 {
-                    die += 1;
+                if tree_map[x][j] >= *col {
+                    if die == 2 {
+                        die += 1;
+                    }
                     if scenic_die == 2 {
                         local_scenic += 1;
                         scenic_die += 1;
@@ -93,6 +104,7 @@ pub fn solve() -> SolutionPair {
             }
             scenic_score[2] = local_scenic;
             local_scenic = 0;
+            scenic_die = 3;
             // check right
             for k in (y + 1)..row.len() {
                 if scenic_die == 4 && die == 4 {
@@ -105,8 +117,10 @@ pub fn solve() -> SolutionPair {
                     local_scenic += 1;
                     scenic_die += 1;
                 }
-                if tree_map[x][k] >= *col && die == 3 {
-                    die += 1;
+                if tree_map[x][k] >= *col {
+                    if die == 3 {
+                        die += 1;
+                    }
                     if scenic_die == 3 {
                         local_scenic += 1;
                         scenic_die += 1;
@@ -115,10 +129,6 @@ pub fn solve() -> SolutionPair {
             }
             scenic_score[3] = local_scenic;
             let scenic_total = scenic_score[0] * scenic_score[1] * scenic_score[2] * scenic_score[3];
-
-            //if scenic_total > max_scenic { max_scenic = scenic_total; }
-            println!("current scenic nums: local:{}, arr:{:?}, max:{}, total:{}", local_scenic, scenic_score, max_scenic, scenic_total);
-
 
             if (x == 0 && y == 0)
                 || (x == tree_map.len() - 1 && y == 0)
@@ -132,7 +142,6 @@ pub fn solve() -> SolutionPair {
 
             if scenic_total > max_scenic { 
                 max_scenic = scenic_total; 
-                println!("new max scenic: {}", max_scenic);
             }
         }
     }
