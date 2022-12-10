@@ -1,6 +1,4 @@
-use crate::{Solution, SolutionPair};
-use std::collections::HashSet;
-use core::hash::Hash;
+use crate::{Solution, SolutionPair, etc::has_unique_elements};
 
 ///////////////////////////////////////////////////////////////////////////////
 /// use .windows() and hashset
@@ -23,14 +21,4 @@ pub fn find_index_of_unique_window(size: usize, input: Vec<char>) -> i32 {
         }
     }
     0
-}
-
-// TODO move to util class
-pub fn has_unique_elements<T>(iter: T) -> bool 
-    where
-    T: IntoIterator,
-    T::Item: Eq + Hash,
-{
-    let mut uniq = HashSet::new();
-    iter.into_iter().all(move |x| uniq.insert(x))
 }

@@ -1,4 +1,4 @@
-use crate::{Solution, SolutionPair};
+use crate::{Solution, SolutionPair, etc::Point};
 use std::collections::HashSet;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -84,18 +84,4 @@ pub fn solve() -> SolutionPair {
         Solution::I64(visited.len() as i64),
         Solution::I64(long_visited.len() as i64),
     )
-}
-
-// should probably be a util.
-// i promise i'll do the util refactor tomorrow :)
-#[derive(Eq, Hash, PartialEq, Clone, Copy)]
-pub struct Point {
-    pub x: i32,
-    pub y: i32,
-}
-
-impl Point {
-    pub fn new(x: i32, y: i32) -> Self {
-        Self { x, y }
-    }
 }

@@ -1,4 +1,4 @@
-use crate::{Solution, SolutionPair};
+use crate::{Solution, SolutionPair, etc::Pair};
 
 ///////////////////////////////////////////////////////////////////////////////
 /// parse n check
@@ -40,18 +40,3 @@ pub fn contain_each_other(a: Pair, b: Pair) -> bool {
     (a.start <= b.start && a.end >= b.end) || (b.start <= a.start && b.end >= a.end)
 }
 
-// TODO value in moving this to a util class
-#[derive(Copy, Clone)]
-pub struct Pair {
-    pub start: i32,
-    pub end: i32,
-}
-
-impl Pair {
-    pub fn new(start: &str, end: &str) -> Self {
-        Self {
-            start: start.parse::<i32>().unwrap(),
-            end: end.parse::<i32>().unwrap(),
-        }
-    }
-}
