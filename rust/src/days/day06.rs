@@ -7,7 +7,7 @@ use core::hash::Hash;
 /// the +4 and +14 was the hardest part :')
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gfree/aoc-2022/input/6.in").to_string();
+    let raw_input = include_str!("/home/gib/aoc/input/6.in").to_string();
     let input = raw_input.chars().collect::<Vec<char>>();
     let input_copy = input.clone();
     let sol = find_index_of_unique_window(4, input) + 4;

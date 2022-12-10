@@ -15,5 +15,6 @@ nim: `nim c -r main.nim [day] -d:danger --gc:arc` (additional flags used for max
 | 6   | 0.3461 ms  | n/a        |
 | 7   | 0.1081 ms  | n/a        |
 | 8   | 0.9521 ms  | n/a        |
+| 9   | 0.9655 ms  | n/a        |
 
 does not include compilation or arg parsing. includes input file read time.

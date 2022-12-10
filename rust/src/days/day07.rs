@@ -7,7 +7,7 @@ use std::rc::Rc;
 /// create tree from input, traverse tree to find solutions
 
 pub fn solve() -> SolutionPair {
-    let input = include_str!("/home/gfree/aoc-2022/input/7.in")
+    let input = include_str!("/home/gib/aoc/input/7.in")
         .split("\n")
         .collect::<Vec<&str>>();
 

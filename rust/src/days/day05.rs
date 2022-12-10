@@ -7,7 +7,7 @@ use crate::{Solution, SolutionPair};
 /// well, in the end i used vecdeque, but this was a mistake. vecdeque doesn't have extend or drain for part 2 :(
 
 pub fn solve() -> SolutionPair {
-    let input = include_str!("/home/gfree/aoc-2022/input/5.in")
+    let input = include_str!("/home/gib/aoc/input/5.in")
         .split("\n\n")
         .collect::<Vec<&str>>();
 
