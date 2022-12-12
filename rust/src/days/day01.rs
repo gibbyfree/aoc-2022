@@ -5,7 +5,7 @@ use crate::{Solution, SolutionPair};
 /// sort and pop to get the greatest vals
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gib/aoc/input/1.in");
+    let raw_input = include_str!("../../../input/1.in");
     let mut output = raw_input
         .split("\n\n")
         .map(|s| {

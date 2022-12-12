@@ -9,7 +9,7 @@ use crate::{Solution, SolutionPair};
 /// collapse string vec to conform to the screen size.
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gib/aoc/input/10.in");
+    let raw_input = include_str!("../../../input/10.in");
     let imp_cycles: [i32; 6] = [20, 60, 100, 140, 180, 220];
 
     let mut signal_strengths: Vec<i32> = Vec::new();

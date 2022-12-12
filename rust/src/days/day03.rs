@@ -6,7 +6,7 @@ use std::collections::HashSet;
 /// the rucksack struct is pointless
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gib/aoc/input/3.in");
+    let raw_input = include_str!("../../../input/3.in");
     let priority = "0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let second_input = raw_input.clone();
     let output = raw_input

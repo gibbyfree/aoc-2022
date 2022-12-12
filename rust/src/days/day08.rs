@@ -9,7 +9,7 @@ use crate::{Solution, SolutionPair};
 
 pub fn solve() -> SolutionPair {
     // effectively a list of rows
-    let tree_map: Vec<Vec<u32>> = include_str!("/home/gib/aoc/input/8.in")
+    let tree_map: Vec<Vec<u32>> = include_str!("../../../input/8.in")
         .split("\n")
         .map(|s| {
             let mut v: Vec<u32> = Vec::new();
