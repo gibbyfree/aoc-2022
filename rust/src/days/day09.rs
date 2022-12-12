@@ -11,7 +11,7 @@ use std::collections::HashSet;
 /// i feel like its sloppy insertion into solution 1 is wrecking perf. part 1 ran in like .01 ms and now i'm pushing a full ms.
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gib/aoc/input/9.in");
+    let raw_input = include_str!("../../../input/9.in");
     let mut current: Vec<Point> = Vec::new();
     let mut visited: HashSet<Point> = HashSet::new();
     // everything starts at (0, 0) on the board

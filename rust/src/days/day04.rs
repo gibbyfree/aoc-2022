@@ -4,7 +4,7 @@ use crate::{Solution, SolutionPair, etc::Pair};
 /// parse n check
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gib/aoc/input/4.in");
+    let raw_input = include_str!("../../../input/4.in");
     let mut first_counter = 0;
     let mut second_counter = 0;
     let _proc = raw_input

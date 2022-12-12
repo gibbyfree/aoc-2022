@@ -8,7 +8,7 @@ use crate::{Solution, SolutionPair};
 /// also wasted a lot of time before fixing my solution with find+replace i32 -> i64 :')
 
 pub fn solve() -> SolutionPair {
-    let raw_input = include_str!("/home/gib/aoc/input/11.in");
+    let raw_input = include_str!("../../../input/11.in");
     let mut div_vals: Vec<i64> = Vec::new();
     let monkey_tuples = raw_input
         .split("\n\n")
