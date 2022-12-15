@@ -25,7 +25,7 @@ pub fn has_unique_elements<T>(iter: T) -> bool
     iter.into_iter().all(move |x| uniq.insert(x))
 }
 
-#[derive(Eq, Hash, PartialEq, Clone, Copy)]
+#[derive(Eq, Hash, PartialEq, Clone, Copy, Debug)]
 pub struct Point {
     pub x: i32,
     pub y: i32,
